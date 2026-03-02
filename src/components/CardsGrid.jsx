@@ -16,23 +16,22 @@ export default function CardsGrid() {
 
 
     return (
-        <div className="container text-center">
-            <div className="row row-cols-2">
-                <div className="col">
-                    {
-                        actresses.map((curActress) => (
-                            <Card 
-                                key={curActress.id} 
-                                nome={curActress.name} 
+        <div className="container-fluid text-center mt-5 bg-danger-subtle">
+            <div className="row row-cols-3 g-5">
+                {
+                    actresses.map((curActress) => (
+                        <div key={curActress.id} className="col">
+                            <Card
+                                nome={curActress.name}
                                 annoNascita={curActress.birth_year}
                                 nazionalità={curActress.nationality}
                                 biografia={curActress.biography}
                                 imgUrl={curActress.image}
                                 riconoscimenti={curActress.awards}
                             />
-                        ))
-                    }
-                </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
